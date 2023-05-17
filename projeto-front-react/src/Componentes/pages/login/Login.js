@@ -19,8 +19,11 @@ import image4 from "../../images/gray.png";
 import { Signup } from "../../api/Apis";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigation = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [dadosRecebidos, setDadosRecebidos] = useState({});
@@ -39,7 +42,7 @@ export const Login = () => {
     setPassword(event.target.value);
   };
 
-  const SignupUser = async () => {
+  const LoginUser = async () => {
     try {
       setCarregando(true);
       const result = await Signup(body);
@@ -60,6 +63,10 @@ export const Login = () => {
       });
       console.log("erro:", error);
     }
+  };
+
+  const SignupUser = () => {
+    navigation("/createaccount");
   };
 
   //   () => Adicionapokemon(props.pokemon.id)
@@ -114,11 +121,11 @@ export const Login = () => {
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
           </Divofinputlogin>
-          <Buttonlogin onClick={SignupUser}>
+          <Buttonlogin onClick={LoginUser}>
             <b>Continuar</b>
           </Buttonlogin>
           <Linelogin />
-          <Buttonlogin2>
+          <Buttonlogin2 onClick={SignupUser}>
             <b>Crie uma conta!</b>
           </Buttonlogin2>
         </Divofpagelogin>
@@ -157,11 +164,11 @@ export const Login = () => {
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
           </Divofinputlogin>
-          <Buttonlogin onClick={SignupUser}>
+          <Buttonlogin onClick={LoginUser}>
             <b>Continuar</b>
           </Buttonlogin>
           <Linelogin />
-          <Buttonlogin2>
+          <Buttonlogin2 onClick={SignupUser}>
             <b>Crie uma conta!</b>
           </Buttonlogin2>
         </Divofpagelogin>
