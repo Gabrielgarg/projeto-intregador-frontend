@@ -22,9 +22,14 @@ export const Divabovelogin = styled.div`
 
 export const Divofimageslogin = styled.image`
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 83px;
+  /* flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap; */
+  width: 84px;
+  height: 84px;
 `;
 
 export const Divofinputlogin = styled.div`

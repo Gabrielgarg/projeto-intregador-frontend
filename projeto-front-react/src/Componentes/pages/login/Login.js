@@ -12,14 +12,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import image1 from "../../images/red.png";
-import image2 from "../../images/yellow.png";
-import image3 from "../../images/black.png";
-import image4 from "../../images/gray.png";
 import { Signup } from "../../api/Apis";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import logo from "../../images/logo.png";
 
 export const Login = () => {
   const navigation = useNavigate();
@@ -90,10 +87,7 @@ export const Login = () => {
         <Divofpagelogin>
           <Divabovelogin>
             <Divofimageslogin>
-              <img src={image1} />
-              <img src={image2} />
-              <img src={image3} />
-              <img src={image4} />
+              <img src={logo} />
             </Divofimageslogin>
             <b>LabEddit</b>
             <p>O projeto de rede social da Labenu</p>
@@ -133,10 +127,7 @@ export const Login = () => {
         <Divofpagelogin>
           <Divabovelogin>
             <Divofimageslogin>
-              <img src={image1} />
-              <img src={image2} />
-              <img src={image3} />
-              <img src={image4} />
+              <img src={logo} />
             </Divofimageslogin>
             <b>LabEddit</b>
             <p>O projeto de rede social da Labenu</p>
