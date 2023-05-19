@@ -97,7 +97,7 @@ export const Login = () => {
             <FloatingLabel
               controlId="floatingInput"
               label="E-mail"
-              className="mb-3"
+              className="mb-2"
             >
               <Form.Control
                 value={email}
@@ -116,7 +116,7 @@ export const Login = () => {
             </FloatingLabel>
           </Divofinputlogin>
           <Buttonlogin onClick={LoginUser}>
-            <b>Continuar</b>
+            <b>Logar</b>
           </Buttonlogin>
           <Linelogin />
           <Buttonlogin2 onClick={SignupUser}>
@@ -137,7 +137,7 @@ export const Login = () => {
             <FloatingLabel
               controlId="floatingInput"
               label="E-mail"
-              className="mb-3"
+              className="mb-2"
             >
               <Form.Control
                 value={email}
@@ -156,7 +156,7 @@ export const Login = () => {
             </FloatingLabel>
           </Divofinputlogin>
           <Buttonlogin onClick={LoginUser}>
-            <b>Continuar</b>
+            <b>Logar</b>
           </Buttonlogin>
           <Linelogin />
           <Buttonlogin2 onClick={SignupUser}>

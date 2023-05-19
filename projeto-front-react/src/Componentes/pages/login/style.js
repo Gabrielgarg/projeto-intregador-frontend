@@ -16,17 +16,20 @@ export const Divofpagelogin = styled.body`
 `;
 
 export const Divabovelogin = styled.div`
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 100px;
 `;
 
 export const Divofimageslogin = styled.image`
   display: flex;
   /* flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
+  align-items: end;
+  align-content: end;
+  justify-content: end;
+  justify-items: end;
   flex-wrap: wrap; */
   width: 84px;
   height: 84px;
@@ -50,6 +53,7 @@ export const Buttonlogin = styled.button`
 export const Linelogin = styled.div`
   margin-top: 20px;
   width: 363px;
+  height: 1px;
   border: 1px solid #ff6489;
 `;
 
