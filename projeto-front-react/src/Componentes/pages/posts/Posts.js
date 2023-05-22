@@ -11,13 +11,26 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { Buttonlogin, Linelogin } from "../login/style";
-import { Buttonlogin3, Linelogin2, Styleofcard, TextofPost } from "./style";
+import balao from "../../images/balao.png";
+import {
+  Buttonlogin3,
+  Buttonlogin4,
+  Buttonup,
+  Linelogin2,
+  Linelogin3,
+  Styleofcard,
+  TextofPost,
+} from "./style";
 
 export const Posts = () => {
   const navigation = useNavigate();
 
   const login = () => {
     navigation("/");
+  };
+
+  const changeComment = () => {
+    navigation("/comments/");
   };
 
   const [post, setPost] = useState("");
@@ -35,13 +48,14 @@ export const Posts = () => {
         </HeaderofpagCreate>
         <Divofalignitems>
           <TextofPost
+            value={post}
             onChange={changePost}
             placeholder="Escreva seu post"
           ></TextofPost>
-          <Buttonlogin3>
+          <Buttonlogin4>
             <b>Postar</b>
-          </Buttonlogin3>
-          <Linelogin2 />
+          </Buttonlogin4>
+          <Linelogin3 />
           <Styleofcard>
             <div className="wrapper">
               <div className="blog_post">
@@ -56,11 +70,19 @@ export const Posts = () => {
                     {" "}
                     Enviado por:<b>gabriel</b>
                   </h6>
+                  <div>comments</div>
                   <p></p>
                 </div>
-                <a className="btn_primary" href="#">
-                  >
-                </a>
+                <button className="glow-on-hover">⇧</button>
+                <button className="glow-on-hover">⇩</button>
+                <button onClick={changeComment}>
+                  <img src={balao} />
+                  number
+                </button>
+                {/* <div src={balao}></div> */}
+                {/* <a className="btn_primary" href="#">
+                  ->
+                </a> */}
               </div>
             </div>
           </Styleofcard>
