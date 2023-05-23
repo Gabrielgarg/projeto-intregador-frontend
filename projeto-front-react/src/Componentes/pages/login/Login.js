@@ -9,10 +9,10 @@ import {
   Modelspageoflogin,
 } from "./style";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import { Signup } from "../../api/Apis";
+import { LoginApi } from "../../api/Apis";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -27,8 +27,8 @@ export const Login = () => {
   const [carregando, setCarregando] = useState(false);
 
   const body = {
-    email: email,
-    password: password,
+    email,
+    password,
   };
 
   const changeEmail = (event) => {
@@ -39,18 +39,23 @@ export const Login = () => {
     setPassword(event.target.value);
   };
 
+  useEffect(() => {
+    if (dadosRecebidos.message === "Login realizado com sucesso") {
+      localStorage.setItem("token", JSON.stringify(dadosRecebidos.token));
+      navigation("/socialmidia");
+    }
+  }, [dadosRecebidos]);
+
   const LoginUser = async () => {
     try {
       setCarregando(true);
-      const result = await Signup(body);
-      setDadosRecebidos(result);
-      localStorage.setItem("Token", JSON.stringify(result.token));
-      setCarregando(false);
+      const result = await LoginApi(body);
+      setDadosRecebidos(result.data);
     } catch (error) {
       setCarregando(true);
       toast.error("E-mail ou senha inválidos!", {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -72,7 +77,7 @@ export const Login = () => {
     <Modelspageoflogin>
       <ToastContainer
         position="top-center"
-        autoClose={3000}
+        autoClose={2000}
         limit={1}
         hideProgressBar
         newestOnTop={false}
