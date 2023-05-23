@@ -22,11 +22,32 @@ export const CreatePostApi = async (config, body) => {
   }
 };
 
-export const GetPostApi = async (config) => {
+export const getPostApi = async (config) => {
   try {
     const reposta = await axios.get(
       "http://localhost:3003/posts/getpost",
       config
+    );
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const GetUsersApi = async (config) => {
+  try {
+    const reposta = await axios.get("http://localhost:3003/users", config);
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const CreateUserApi = async (body) => {
+  try {
+    const reposta = await axios.post(
+      "http://localhost:3003/users/signup",
+      body
     );
     return reposta;
   } catch (error) {

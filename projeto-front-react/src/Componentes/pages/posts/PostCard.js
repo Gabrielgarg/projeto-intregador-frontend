@@ -1,13 +1,43 @@
 import { useNavigate } from "react-router-dom";
 import { Styleofcard } from "./style";
 import balao from "../../images/balao.png";
+import { GetUsersApi } from "../../api/Apis";
+import { useEffect, useState } from "react";
+import { Comments } from "./Comments";
 
-export const PostCard = () => {
+export const PostCard = (props) => {
+  const { post } = props;
   const navigation = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  const token = JSON.parse(localStorage.getItem("token"));
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+
+  useEffect(() => {
+    atualizarapagina();
+  }, []);
+
+  const atualizarapagina = async () => {
+    const result = await GetUsersApi(config);
+    setUsers(result.data);
+  };
 
   const changeComment = () => {
+    localStorage.setItem("comment", JSON.stringify(post));
     navigation("/comments/");
   };
+
+  let name = "";
+
+  for (let x = 0; x < users.length; x++) {
+    if (post.creatorId === users[x].id) {
+      name = users[x].name;
+    }
+  }
 
   return (
     <Styleofcard>
@@ -22,9 +52,9 @@ export const PostCard = () => {
           <div className="container_copy">
             <h6>
               {" "}
-              Enviado por:<b>gabriel</b>
+              Enviado por:<b> {name}</b>
             </h6>
-            <div>comments</div>
+            <div>{post.content}</div>
             <p></p>
           </div>
           <button className="glow-on-hover">⇧</button>

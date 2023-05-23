@@ -64,6 +64,7 @@ export const Styleofcard = styled.div`
   margin-top: -350px;
   justify-self: center;
   border-color: black;
+  gap: 10px;
   /* * {
     padding: 0;
     margin: 0;

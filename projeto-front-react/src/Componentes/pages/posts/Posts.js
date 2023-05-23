@@ -23,32 +23,25 @@ import {
   Styleofcard,
   TextofPost,
 } from "./style";
-import { CreatePostApi, GetPostApi } from "../../api/Apis";
+import { CreatePostApi, GetPostApi, getPostApi } from "../../api/Apis";
 import { PostCard } from "./PostCard";
 
 export const Posts = () => {
   const navigation = useNavigate();
   const [comments, setComments] = useState({});
   const [post, setPost] = useState("");
-  const [posts, setPosts] = useState([]);
   const [controller, setController] = useState(false);
+  const [posts, setPosts] = useState([]);
 
-  const token = window.localStorage.getItem("token");
+  const token = JSON.parse(localStorage.getItem("token"));
   const config = {
     headers: {
-      Authorization:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InUwMDQiLCJuYW1lIjoiR2FicmllbGRldiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY4NDc4Njc3MywiZXhwIjoxNjg1MzkxNTczfQ.SXasxwEG_io-jcBwPrQVmRkj75EsgSQzNxltSaTRbqo",
+      Authorization: token,
     },
   };
   const body = {
     content: post,
   };
-  const result = GetPostApi(config);
-  // setPosts(result.data);
-  // useEffect(() => {
-  //   setPosts(result.data);
-  // }, [controller]);
-  console.log(result.data);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -63,9 +56,19 @@ export const Posts = () => {
     setPost(event.target.value);
   };
 
+  const atualizarapagina = async () => {
+    try {
+      const result = await getPostApi(config);
+      setPosts(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    atualizarapagina();
+  }, [controller]);
+
   const Postar = async () => {
-    // console.log(body);
-    // console.log(config);
     const result = await CreatePostApi(config, body);
     setComments(result.data);
     toast.success("Post criado com sucesso!", {
@@ -78,7 +81,7 @@ export const Posts = () => {
       progress: undefined,
       theme: "light",
     });
-    setController(true);
+    setController(!controller);
   };
 
   return (
@@ -111,9 +114,9 @@ export const Posts = () => {
             <b>Postar</b>
           </Buttonlogin4>
           <Linelogin3 />
-          {/* {posts.map((post) => {
+          {posts.map((post) => {
             return <PostCard key={post.id} post={post} />;
-          })} */}
+          })}
         </Divofalignitems>
       </BodyofpageCreate>
     </Modelspageoflogin>
