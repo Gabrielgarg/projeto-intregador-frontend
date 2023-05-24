@@ -15,6 +15,7 @@ export const BodyofpageCreate = styled.body`
 
 export const HeaderofpagCreate = styled.header`
   display: grid;
+  grid-row: 1/2;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #ededed;
 `;
@@ -35,19 +36,54 @@ export const ButtonlogarCreate = styled.button`
 
 export const Divofimagescreate = styled.img`
   display: grid;
-  justify-self: center;
   align-self: center;
+  justify-self: center;
   grid-column: 2/3;
   height: 28px;
   width: 28px;
 `;
 
 export const Divofalignitems = styled.div`
+  margin-top: 10px;
+  display: grid;
+  grid-row: 3/4;
+  /* align-self: center; */
+  justify-self: center;
+  width: 364;
+  gap: 20px;
+`;
+export const Divofalignitems3 = styled.div`
+  margin-top: 10px;
+  display: grid;
+  grid-row: 2/3;
+  /* align-self: center; */
+  width: 364;
+`;
+
+export const DivofalignitemsComments = styled.div`
+  margin-top: 10px;
+  display: grid;
+  grid-row: 3/4;
+  /* align-self: center; */
+  justify-self: center;
+  width: 364;
+  gap: 20px;
+`;
+
+export const DivofalignitemsCreate = styled.div`
   display: grid;
   grid-row: 2/3;
   /* align-self: center; */
   justify-self: center;
   width: 364;
+`;
+export const DivofalignitemsAbouve = styled.div`
+  display: grid;
+  grid-row: 2/3;
+  /* align-self: center; */
+  justify-self: center;
+  width: 364;
+  gap: 10px;
 `;
 
 export const Divofinputcreate = styled.body`

@@ -1,9 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { Styleofcard } from "./style";
+import {
+  Alinhandoitens,
+  Cardsofbutton2,
+  Cardsofbuttons,
+  Imageofbalao,
+  Styleofcard,
+} from "./style";
 import balao from "../../images/balao.png";
 import { GetUsersApi } from "../../api/Apis";
 import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
+import Card from "react-bootstrap/Card";
 
 export const PostCard = (props) => {
   const { post } = props;
@@ -40,8 +47,31 @@ export const PostCard = (props) => {
   }
 
   return (
-    <Styleofcard>
-      <div className="wrapper">
+    <Card style={{ width: "23rem" }}>
+      <Card.Body>
+        {/* <Card.Title>Enviado por: {name}</Card.Title> */}
+        <Card.Subtitle className="mb-2 text-muted">
+          Enviado por: {name}
+        </Card.Subtitle>
+        <Card.Title>{post.content}</Card.Title>
+        <p></p>
+        <Alinhandoitens>
+          <Cardsofbuttons>
+            <div className="glow-on-hover">⇧</div>
+            <div>numb</div>
+            <div className="glow-on-hover">⇩</div>
+          </Cardsofbuttons>
+          <Cardsofbutton2 onClick={changeComment}>
+            <Imageofbalao src={balao} />
+            <div>eaize</div>
+          </Cardsofbutton2>
+        </Alinhandoitens>
+        {/* <Card></Card> */}
+      </Card.Body>
+    </Card>
+
+    // <Styleofcard>
+    /* <div className="wrapper">
         <div className="blog_post">
           <div className="img_pod">
             <img
@@ -49,22 +79,18 @@ export const PostCard = (props) => {
               alt="imageofperson"
             />
           </div>
-          <div className="container_copy">
+          <div className="bar">
             <h6>
               {" "}
               Enviado por:<b> {name}</b>
             </h6>
-            <div>{post.content}</div>
-            <p></p>
           </div>
+          <p className="bar2">{post.content}</p>
           <button className="glow-on-hover">⇧</button>
           <button className="glow-on-hover">⇩</button>
-          <button onClick={changeComment}>
-            <img src={balao} />
-            number
-          </button>
+          <button onClick={changeComment} src={balao}></button>
         </div>
       </div>
-    </Styleofcard>
+    </Styleofcard> */
   );
 };

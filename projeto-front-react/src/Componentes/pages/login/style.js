@@ -25,12 +25,6 @@ export const Divabovelogin = styled.div`
 
 export const Divofimageslogin = styled.image`
   display: flex;
-  /* flex-direction: column;
-  align-items: end;
-  align-content: end;
-  justify-content: end;
-  justify-items: end;
-  flex-wrap: wrap; */
   width: 84px;
   height: 84px;
 `;

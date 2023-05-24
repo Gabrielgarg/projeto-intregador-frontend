@@ -2,6 +2,7 @@ import {
   BodyofpageCreate,
   ButtonlogarCreate,
   Divofalignitems,
+  DivofalignitemsAbouve,
   Divofimagescreate,
   HeaderofpagCreate,
   Modelspageoflogin,
@@ -15,6 +16,7 @@ import balao from "../../images/balao.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
+  BodyofpagePost,
   Buttonlogin3,
   Buttonlogin4,
   Buttonup,
@@ -99,12 +101,12 @@ export const Posts = () => {
         pauseOnHover
         theme="light"
       />
-      <BodyofpageCreate>
+      <BodyofpagePost>
         <HeaderofpagCreate>
           <Divofimagescreate src={logo} />
           <ButtonlogarCreate onClick={logout}>Logout</ButtonlogarCreate>
         </HeaderofpagCreate>
-        <Divofalignitems>
+        <DivofalignitemsAbouve>
           <TextofPost
             value={post}
             onChange={changePost}
@@ -114,11 +116,13 @@ export const Posts = () => {
             <b>Postar</b>
           </Buttonlogin4>
           <Linelogin3 />
+        </DivofalignitemsAbouve>
+        <Divofalignitems>
           {posts.map((post) => {
             return <PostCard key={post.id} post={post} />;
           })}
         </Divofalignitems>
-      </BodyofpageCreate>
+      </BodyofpagePost>
     </Modelspageoflogin>
   );
 };
