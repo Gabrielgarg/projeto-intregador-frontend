@@ -28,12 +28,14 @@ import {
 import { CreatePostApi, GetPostApi, getPostApi } from "../../api/Apis";
 import { PostCard } from "./PostCard";
 
-export const Posts = () => {
+export const Posts = (props) => {
   const navigation = useNavigate();
   const [comments, setComments] = useState({});
   const [post, setPost] = useState("");
   const [controller, setController] = useState(false);
   const [posts, setPosts] = useState([]);
+
+  props.setPostorcomment(false);
 
   const token = JSON.parse(localStorage.getItem("token"));
   const config = {
@@ -48,10 +50,6 @@ export const Posts = () => {
   const logout = () => {
     localStorage.removeItem("token");
     navigation("/");
-  };
-
-  const changeComment = () => {
-    navigation("/comments");
   };
 
   const changePost = (event) => {
@@ -71,8 +69,7 @@ export const Posts = () => {
   }, [controller]);
 
   const Postar = async () => {
-    const result = await CreatePostApi(config, body);
-    setComments(result.data);
+    await CreatePostApi(config, body);
     toast.success("Post criado com sucesso!", {
       position: "top-center",
       autoClose: 2000,
@@ -119,7 +116,14 @@ export const Posts = () => {
         </DivofalignitemsAbouve>
         <Divofalignitems>
           {posts.map((post) => {
-            return <PostCard key={post.id} post={post} />;
+            return (
+              <PostCard
+                key={post.id}
+                post={post}
+                setPostorcomment={props.setPostorcomment}
+                postorcomment={props.postorcomment}
+              />
+            );
           })}
         </Divofalignitems>
       </BodyofpagePost>

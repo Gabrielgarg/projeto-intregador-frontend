@@ -55,9 +55,11 @@ export const Divofalignitems = styled.div`
 export const Divofalignitems3 = styled.div`
   margin-top: 10px;
   display: grid;
-  grid-row: 2/3;
+  grid-row: 3/4;
   /* align-self: center; */
+  justify-self: center;
   width: 364;
+  gap: 20px;
 `;
 
 export const DivofalignitemsComments = styled.div`

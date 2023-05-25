@@ -55,10 +55,48 @@ export const CreateUserApi = async (body) => {
   }
 };
 
-export const GetCommentsApi = async (config, body) => {
+export const getCommentsApi = async (config, id) => {
+  try {
+    const reposta = await axios.get(
+      `http://localhost:3003/posts/${id}/getpost/comments`,
+      config
+    );
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const createCommentApi = async (config, body) => {
   try {
     const reposta = await axios.post(
-      "http://localhost:3003/posts/:id/getpost/comments",
+      `http://localhost:3003/posts/getpost/createcomment`,
+      body,
+      config
+    );
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const likeApi = async (config, body, id) => {
+  try {
+    const reposta = await axios.put(
+      `http://localhost:3003/posts/${id}/like`,
+      body,
+      config
+    );
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const likeApiComment = async (config, body, id) => {
+  try {
+    const reposta = await axios.put(
+      `http://localhost:3003/posts/${id}/like/comment`,
       body,
       config
     );
