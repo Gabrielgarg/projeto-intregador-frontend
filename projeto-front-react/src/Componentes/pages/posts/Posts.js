@@ -25,12 +25,17 @@ import {
   Styleofcard,
   TextofPost,
 } from "./style";
-import { CreatePostApi, GetPostApi, getPostApi } from "../../api/Apis";
+import {
+  CreatePostApi,
+  GetPostApi,
+  getCommentsApi,
+  getPostApi,
+} from "../../api/Apis";
 import { PostCard } from "./PostCard";
 
 export const Posts = (props) => {
   const navigation = useNavigate();
-  const [comments, setComments] = useState({});
+  // const [comments, setComments] = useState({});
   const [post, setPost] = useState("");
   const [controller, setController] = useState(false);
   const [posts, setPosts] = useState([]);

@@ -99,6 +99,27 @@ export const Cardsofbuttons = styled.div`
   border-radius: 10px;
 `;
 
+export const Setaesquerda = styled.div`
+  display: flex;
+  justify-content: start;
+`;
+
+export const Setadireita = styled.div`
+  display: flex;
+  /* justify-content: end;
+  justify-items: end;
+  justify-self: end;
+  align-items: end;
+  align-self: flex-end;
+  align-content: end; */
+`;
+export const Numberoflike = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
 export const Cardsofbutton2 = styled.button`
   display: flex;
   background-color: white;
@@ -116,6 +137,7 @@ export const Cardsofbutton2 = styled.button`
 export const Imageofbalao = styled.img`
   width: 14;
   height: 14.9;
+  margin-right: 8px;
 `;
 
 export const Alinhandoitens = styled.div`

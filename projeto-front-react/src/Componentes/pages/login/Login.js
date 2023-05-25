@@ -17,6 +17,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
+import { validarEmail } from "../../../utils/regex";
+import { validarSenha } from "../../../utils/regex";
 
 export const Login = () => {
   const navigation = useNavigate();
@@ -25,18 +27,20 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [dadosRecebidos, setDadosRecebidos] = useState({});
   const [carregando, setCarregando] = useState(false);
+  const [emailErr, setEmailErr] = useState(false);
+  const [passwordErr, setPassworErr] = useState(false);
 
   const body = {
     email,
     password,
   };
 
-  const changeEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
   const changePassword = (event) => {
     setPassword(event.target.value);
+  };
+
+  const changeEmail = (event) => {
+    setEmail(event.target.value);
   };
 
   useEffect(() => {
@@ -47,31 +51,41 @@ export const Login = () => {
   }, [dadosRecebidos]);
 
   const LoginUser = async () => {
-    try {
-      setCarregando(true);
-      const result = await LoginApi(body);
-      setDadosRecebidos(result.data);
-    } catch (error) {
-      setCarregando(true);
-      toast.error("E-mail ou senha inválidos!", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      console.log("erro:", error);
+    if (!validarEmail.test(email)) {
+      setEmailErr(true);
+    } else {
+      setEmailErr(false);
+    }
+    if (!validarSenha.test(password)) {
+      setPassworErr(true);
+    } else {
+      setPassworErr(false);
+    }
+    if (emailErr === false && passwordErr === false) {
+      try {
+        setCarregando(true);
+        const result = await LoginApi(body);
+        setDadosRecebidos(result.data);
+      } catch (error) {
+        setCarregando(true);
+        toast.error("E-mail ou senha inválidos!", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        console.log("erro:", error);
+      }
     }
   };
 
   const SignupUser = () => {
     navigation("/createaccount");
   };
-
-  //   () => Adicionapokemon(props.pokemon.id)
 
   return (
     <Modelspageoflogin>
@@ -99,6 +113,7 @@ export const Login = () => {
           </Divabovelogin>
 
           <Divofinputlogin>
+            {emailErr && <p>Digite um e-mail válido!</p>}
             <FloatingLabel
               controlId="floatingInput"
               label="E-mail"
@@ -119,6 +134,12 @@ export const Login = () => {
             >
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
+            {passwordErr && (
+              <div>
+                Digite uma senha mais forte! Letra Maiuscula e minuscula,
+                número, e caracter especial{" "}
+              </div>
+            )}
           </Divofinputlogin>
           <Buttonlogin onClick={LoginUser}>
             <b>Logar</b>
@@ -139,6 +160,7 @@ export const Login = () => {
           </Divabovelogin>
 
           <Divofinputlogin>
+            {emailErr && <p>Digite um e-mail válido!</p>}
             <FloatingLabel
               controlId="floatingInput"
               label="E-mail"
@@ -159,6 +181,13 @@ export const Login = () => {
             >
               <Form.Control type="password" placeholder="Password" />
             </FloatingLabel>
+            {passwordErr && (
+              <div>
+                {" "}
+                Digite uma senha mais forte! Letra Maiuscula e minuscula,
+                número, e caracter especial !
+              </div>
+            )}
           </Divofinputlogin>
           <Buttonlogin onClick={LoginUser}>
             <b>Logar</b>

@@ -39,8 +39,8 @@ import { PostCard } from "./PostCard";
 export const Comments = (props) => {
   const [comment, setComment] = useState("");
   const [users, setUsers] = useState([]);
-  const [commentsofPost, setCommentsOfPost] = useState([]);
   const [controller, setController] = useState(false);
+  const [commentsofPost, setCommentsOfPost] = useState([]);
   // const [likes, setLikes] = useState()
 
   const navigation = useNavigate();
@@ -89,13 +89,9 @@ export const Comments = (props) => {
     atualizarapagina();
   }, []);
 
-  useEffect(() => {
-    createComment();
-  }, []);
-
-  // const like2 = async () => {
-  //   await likeApiComment(config, body, comment.id);
-  // };
+  // useEffect(() => {
+  //   createComment();
+  // }, []);
 
   let name = "";
 
@@ -127,7 +123,7 @@ export const Comments = (props) => {
             onChange={changeComments}
             placeholder="Adicionar comentário"
           ></TextofComment>
-          <Buttonlogin3 onClick={() => createComment()}>
+          <Buttonlogin3 onClick={createComment}>
             <b>Responder</b>
           </Buttonlogin3>
           <Linelogin2 />
@@ -140,6 +136,8 @@ export const Comments = (props) => {
                 post={comment}
                 setPostorcomment={props.setPostorcomment}
                 postorcomment={props.postorcomment}
+                setCommentsOfPost={setCommentsOfPost}
+                commentsofPost={commentsofPost}
               />
             );
           })}
