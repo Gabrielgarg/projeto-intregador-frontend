@@ -5,7 +5,7 @@
 Projeto criado em mobile first feito para demonstrar todo o conhecimento aprendido, em desenvolvimento web full-stack, onde foi feito um site exclusivo para posts, onde cada usuário pode escrever o que está pensando, dar like/dislike, e comentar em outros posts, a parte do front foi feita com React.js, feita a leitura da Api feita pelo back-end, onde o back-end foi utilizado o node.js, e feito em arquitetura limpa, com o Sqlite.
 
 ## Back-end
-Link do back-end do projeto ->
+Link do back-end do projeto -> https://github.com/Gabrielgarg/projeto-intregador-back
 
 ## Indice
 
@@ -34,8 +34,8 @@ Link do back-end do projeto ->
 
 ## Demonstração
 
-Surge
-LINK -> 
+Surge(Deploy, não funciona sem os dados do back-end)
+LINK -> https://integrator-gabrielgg.surge.sh/
 
 ## Como rodar esse projeto?
 
