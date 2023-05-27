@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Projeto Integrador
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![login](https://github.com/Gabrielgarg/projeto-intregador-frontend/assets/111094464/a95b4d44-9930-4391-91b9-5c7a7382ee81)
 
-## Available Scripts
+Projeto criado em mobile first feito para demonstrar todo o conhecimento aprendido, em desenvolvimento web full-stack, onde foi feito um site exclusivo para posts, onde cada usuário pode escrever o que está pensando, dar like/dislike, e comentar em outros posts, a parte do front foi feita com React.js, feita a leitura da Api feita pelo back-end, onde o back-end foi utilizado o node.js, e feito em arquitetura limpa, com o Sqlite.
 
-In the project directory, you can run:
+## Back-end
+Link do back-end do projeto ->
 
-### `npm start`
+## Indice
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- <a href="#-funcionalidades">Funcionalidades</a>
+- <a href="#-layout">Layout</a>
+- <a href="#-demonstracao">Demonstracao</a>
+- <a href="#-rodar">Rodar</a>
+- <a href="#-tecnologias">Tecnologias Utilizadas</a>
+- <a href="#-autoras">Autoras</a>
+- <a href="#-passos">Passos</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Funcionalidades
 
-### `npm test`
+- [x] Tela de Login, solicitando e-mail e senha
+- [x] Tela de cadastro
+- [x] Tela de posts
+- [x] Tela de comentários
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Layout
 
-### `npm run build`
+![login](https://github.com/Gabrielgarg/projeto-intregador-frontend/assets/111094464/a95b4d44-9930-4391-91b9-5c7a7382ee81)
+![comentarios](https://github.com/Gabrielgarg/projeto-intregador-frontend/assets/111094464/af19c561-0056-46e6-9427-1a20405defd9)
+![posts](https://github.com/Gabrielgarg/projeto-intregador-frontend/assets/111094464/7947289c-d363-4bfe-8883-9c5df8afada4)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demonstração
 
-### `npm run eject`
+Surge
+LINK -> 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Como rodar esse projeto?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone este repositorio
+$ git clone linkrepo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Acesse a pasta do projeto no seu terminal
+$ cd projeto-intregador-frontend
+$ cd projeto-front-react
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Instale as dependências
+$ npm install
 
-## Learn More
+# Execute a aplicação
+$ npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tecnologias Utilizadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. [React](https://pt-br.reactjs.org/)
+2. [React Router](https://pokeapi.co/)
+3. [React - Bootstrap](https://react-bootstrap.github.io/)
+4. [Toastify](https://fkhadra.github.io/react-toastify/introduction)
 
-### Code Splitting
+## Pessoas Autoras
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img style= "width:200px" src="https://user-images.githubusercontent.com/111094464/235818169-a2c160dd-3fbc-46e2-b9a9-088000e10b2d.png" alt="Imagem do desenvolvedor"></img>
 
-### Analyzing the Bundle Size
+[Linkedin](https://www.linkedin.com/in/gabriel-garuthi/) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Github](https://github.com/Gabrielgarg)
 
-### Making a Progressive Web App
+## Prossimos passos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Criar seu usuário
+- [ ] Logar
+- [ ] Criar seus posts
+- [ ] Curtir/Comentar outros posts
+- [ ] Se divertir!
