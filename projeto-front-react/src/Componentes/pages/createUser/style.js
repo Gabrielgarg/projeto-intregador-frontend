@@ -44,10 +44,9 @@ export const Divofimagescreate = styled.img`
 `;
 
 export const Divofalignitems = styled.div`
-  margin-top: 10px;
+  margin-top: 2rem;
   display: grid;
   grid-row: 3/4;
-  /* align-self: center; */
   justify-self: center;
   width: 364;
   gap: 20px;
@@ -56,7 +55,6 @@ export const Divofalignitems3 = styled.div`
   margin-top: 10px;
   display: grid;
   grid-row: 3/4;
-  /* align-self: center; */
   justify-self: center;
   width: 364;
   gap: 20px;
@@ -66,7 +64,6 @@ export const DivofalignitemsComments = styled.div`
   margin-top: 10px;
   display: grid;
   grid-row: 3/4;
-  /* align-self: center; */
   justify-self: center;
   width: 364;
   gap: 20px;
@@ -75,14 +72,12 @@ export const DivofalignitemsComments = styled.div`
 export const DivofalignitemsCreate = styled.div`
   display: grid;
   grid-row: 2/3;
-  /* align-self: center; */
   justify-self: center;
   width: 364;
 `;
 export const DivofalignitemsAbouve = styled.div`
   display: grid;
   grid-row: 2/3;
-  /* align-self: center; */
   justify-self: center;
   width: 364;
   gap: 10px;
@@ -95,30 +90,15 @@ export const Divofinputcreate = styled.body`
   justify-self: center;
   margin-top: 100px;
   margin-bottom: 20px;
-  /* margin-bottom: 100px; */
-  /* grid-row: 1/2; */
-  /* display: grid; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* justify-items: center; */
 `;
 
 export const Divoffrase = styled.div`
-  /* display: grid; */
-  /*grid-row: 2/3; */
-  /* margin-top: 150px; */
   margin-top: 50px;
   justify-self: center;
 `;
 
 export const Divoffrase2 = styled.div`
-  /* display: grid; */
-  /*grid-row: 2/3; */
-  /* margin-top: 150px; */
   width: 363px;
-  /* padding: 10; */
   justify-self: center;
 `;
 

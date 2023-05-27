@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-// Application.init();
 export const ErrorPage = () => {
   const navigation = useNavigate();
 

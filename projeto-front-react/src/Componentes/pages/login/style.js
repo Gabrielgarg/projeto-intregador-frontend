@@ -11,8 +11,6 @@ export const Divofpagelogin = styled.body`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
-  /* font-family: "IBM Plex Sans"; */
-  margin-top: 100px;
 `;
 
 export const Divabovelogin = styled.div`
@@ -20,16 +18,16 @@ export const Divabovelogin = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-top: 40px;
 `;
 
 export const Divofimageslogin = styled.image`
-  display: flex;
   width: 84px;
   height: 84px;
 `;
 
 export const Divofinputlogin = styled.div`
+  margin-top: 80px;
   width: 363px;
 `;
 

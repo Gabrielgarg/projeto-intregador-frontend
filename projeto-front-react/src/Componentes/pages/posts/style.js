@@ -9,7 +9,6 @@ export const TextofPost = styled.textarea`
   margin-top: 30px;
   justify-self: center;
   padding: 10px;
-  /* margin-bottom: -00px; */
 `;
 export const TextofComment = styled.textarea`
   border-radius: 10px;
@@ -20,7 +19,6 @@ export const TextofComment = styled.textarea`
   margin-top: 5px;
   justify-self: center;
   padding: 10px;
-  /* margin-bottom: -00px; */
 `;
 export const TextofPost2 = styled.textarea`
   border-radius: 10px;
@@ -28,22 +26,18 @@ export const TextofPost2 = styled.textarea`
   height: 131px;
   width: 22rem;
   margin-top: -90px;
-  /* margin-top: 30px; */
   justify-self: center;
-  /* margin-bottom: -00px; */
 `;
 
 export const BodyofpagePost = styled.body`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 4vh 27vh 69vh;
-  /* font-family: "IBM Plex Sans"; */
 `;
 export const BodyofpageComments = styled.body`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100vw;
   grid-template-rows: 4vh 45vh 51vh;
-  /* font-family: "IBM Plex Sans"; */
 `;
 export const Buttonlogin3 = styled.button`
   font-family: "IBM Plex Sans";
@@ -53,11 +47,7 @@ export const Buttonlogin3 = styled.button`
   border-color: white;
   height: 50px;
   color: white;
-  /* align-self: center; */
   justify-self: center;
-  /* margin-top: -10px; */
-  /* margin-bottom: 550px; */
-  /* margin-top: -90px; */
 `;
 export const Buttonlogin4 = styled.button`
   background: linear-gradient(#ff6489, #f9b24e);
@@ -66,20 +56,14 @@ export const Buttonlogin4 = styled.button`
   border-color: white;
   height: 50px;
   color: white;
-  /* align-self: center; */
   justify-self: center;
-  /* margin-top: -10px; */
-  /* margin-bottom: 550px; */
-  /* margin-top: -160px; */
 `;
 export const Linelogin2 = styled.div`
-  /* margin-top: -220px; */
   width: 363px;
   height: 1px;
   border: 1px solid #ff6489;
 `;
 export const Linelogin3 = styled.div`
-  /* margin-top: -270px; */
   width: 363px;
   height: 1px;
   border: 1px solid #ff6489;
@@ -106,18 +90,43 @@ export const Setaesquerda = styled.div`
 
 export const Setadireita = styled.div`
   display: flex;
-  /* justify-content: end;
-  justify-items: end;
-  justify-self: end;
-  align-items: end;
-  align-self: flex-end;
-  align-content: end; */
 `;
 export const Numberoflike = styled.div`
   display: flex;
   justify-content: center;
   margin-left: 10px;
   margin-right: 10px;
+`;
+
+export const Formofpassword = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const FormofButton = styled.button`
+  cursor: pointer;
+  height: 58px;
+  padding: 20px;
+  outline: unset;
+  position: relative;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  border-radius: 0px 4px 4px 0px;
+  font-size: 18px;
+  background-color: #3a4750;
+  color: #fff;
+  svg {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+  }
+`;
+
+export const SizeofForm = styled.div`
+  width: 305px;
+  height: 60px;
 `;
 
 export const Cardsofbutton2 = styled.button`
@@ -146,63 +155,23 @@ export const Alinhandoitens = styled.div`
 `;
 
 export const Styleofcard = styled.div`
-  /* margin-top: -350px; */
   justify-self: center;
   border-color: black;
   font-family: "Roboto", sans-serif;
-  /* font-size: 8px; */
-  /* gap: 10px; */
-  /* * {
-    padding: 0;
-    margin: 0;
-  } */
-
-  /* html {
-    font-family: "Roboto", sans-serif;
-    font-size: 8px;
-  } */
 
   .wrapper {
     width: 345px;
     height: 200px;
-    /* margin-top: -250px; */
   }
 
   .blog_post {
     position: relative;
-    /* padding: 6rem 3rem 6rem 6rem; */
     background: #fff;
-    /* max-width: 400px; */
     border-radius: 10px;
-    /* top: 50%; */
     left: 50%;
     transform: translate(-50%);
     box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
   }
-
-  /* .img_pod {
-    height: 50px;
-    width: 50px;
-    background: linear-gradient(90deg, #ff9966, #ff5e62);
-    z-index: -1;
-    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-    border-radius: 100%;
-    position: absolute;
-    left: -30px;
-    top: -18px;
-    /* transform: translateY(-50%); 
-  } */
-
-  /* img {
-    height: 40px;
-    width: 40px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-  } */
 `;
 
 export const Divofclosebutton = styled.button`
@@ -217,31 +186,18 @@ export const Divofclosebutton = styled.button`
 `;
 
 export const Styleofcard2 = styled.div`
-  /* margin-top: -350px; */
   justify-self: center;
-  /* * {
-    padding: 0;
-    margin: 0;
-  } */
-
-  /* html {
-    font-family: "Roboto", sans-serif;
-    font-size: 8px;
-  } */
 
   .wrapper {
     width: 340px;
     height: 10px;
-    /* margin-top: -250px; */
   }
 
   .blog_post {
     position: relative;
-    /* padding: 6rem 3rem 6rem 6rem; */
     background: #fff;
     max-width: 400px;
     border-radius: 10px;
-    /* top: 50%; */
     left: 55%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
@@ -280,15 +236,6 @@ export const Styledofcomment = styled.div`
 export const Styleofcard3 = styled.div`
   margin-top: -180px;
   justify-self: center;
-  /* * {
-    padding: 0;
-    margin: 0;
-  } */
-
-  /* html {
-    font-family: "Roboto", sans-serif;
-    font-size: 8px;
-  } */
 
   .wrapper {
     width: 340px;
@@ -298,11 +245,9 @@ export const Styleofcard3 = styled.div`
 
   .blog_post {
     position: relative;
-    /* padding: 6rem 3rem 6rem 6rem; */
     background: #fff;
     max-width: 400px;
     border-radius: 10px;
-    /* top: 50%; */
     left: 55%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);

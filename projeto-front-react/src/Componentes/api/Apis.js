@@ -52,6 +52,7 @@ export const CreateUserApi = async (body) => {
     return reposta;
   } catch (error) {
     console.log("erro ao receber os dados:", error);
+    return error;
   }
 };
 
@@ -98,6 +99,18 @@ export const likeApiComment = async (config, body, id) => {
     const reposta = await axios.put(
       `http://localhost:3003/posts/${id}/like/comment`,
       body,
+      config
+    );
+    return reposta;
+  } catch (error) {
+    console.log("erro ao receber os dados:", error);
+  }
+};
+
+export const getPostByIdApi = async (config, id) => {
+  try {
+    const reposta = await axios.get(
+      `http://localhost:3003/posts/getpost?q=${id}`,
       config
     );
     return reposta;

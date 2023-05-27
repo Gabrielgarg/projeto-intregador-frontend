@@ -8,7 +8,6 @@ import {
   Numberoflike,
   Setadireita,
   Setaesquerda,
-  Styleofcard,
 } from "./style";
 import balao from "../../images/balao.png";
 import {
@@ -18,16 +17,14 @@ import {
   likeApiComment,
 } from "../../api/Apis";
 import { useEffect, useState } from "react";
-import { Comments } from "./Comments";
 import Card from "react-bootstrap/Card";
 
 export const PostCard = (props) => {
-  // const { post } = props;
   const navigation = useNavigate();
   const [users, setUsers] = useState([]);
   const [commentsofPost2, setCommentsOfPost2] = useState([]);
-  // console.log(props.postorcomment);
 
+  // console.log(props.postorcomment);
   const token = JSON.parse(localStorage.getItem("token"));
   const config = {
     headers: {
@@ -51,8 +48,6 @@ export const PostCard = (props) => {
       setCommentsOfPost2(comments.data);
     }
   };
-  // console.log(props.post);
-  // console.log(props.commentsofPost.postId);
 
   const changeComment = () => {
     localStorage.setItem("comment", JSON.stringify(props.post));
@@ -75,15 +70,11 @@ export const PostCard = (props) => {
     await likeApiComment(config, body, props.post.id);
   };
 
-  // console.log(props.comment);
-  // console.log(props.post.id);
-
   return (
     <ArrumandoosCards>
       <Card style={{ width: "23rem" }}>
         {props.postorcomment === false ? (
           <Card.Body>
-            {/* <Card.Title>Enviado por: {name}</Card.Title> */}
             <Card.Subtitle className="mb-2 text-muted">
               Enviado por: {name}
             </Card.Subtitle>
@@ -110,7 +101,6 @@ export const PostCard = (props) => {
                 <div>{commentsofPost2.length}</div>
               </Cardsofbutton2>
             </Alinhandoitens>
-            {/* <Card></Card> */}
           </Card.Body>
         ) : (
           <Card.Body>
@@ -137,7 +127,6 @@ export const PostCard = (props) => {
                 </Setadireita>
               </Cardsofbuttons>
             </Alinhandoitens>
-            {/* <Card></Card> */}
           </Card.Body>
         )}
       </Card>

@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import {
-  BodyofpageCreate,
   ButtonlogarCreate,
-  Divofalignitems,
   Divofalignitems3,
   DivofalignitemsAbouve,
   Divofimagescreate,
@@ -11,35 +9,22 @@ import {
 } from "../createUser/style";
 import {
   BodyofpageComments,
-  BodyofpagePost,
   Buttonlogin3,
   Divofclosebutton,
   Linelogin2,
   Styledofcomment,
-  Styleofcard,
-  Styleofcard2,
-  Styleofcard3,
   TextofComment,
-  TextofPost,
-  TextofPost2,
 } from "./style";
 import logo from "../../images/logo.png";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
-import {
-  GetCommentsApi,
-  GetUsersApi,
-  createCommentApi,
-  getCommentsApi,
-  likeApiComment,
-} from "../../api/Apis";
+import { GetUsersApi, createCommentApi, getCommentsApi } from "../../api/Apis";
 import { PostCard } from "./PostCard";
 
 export const Comments = (props) => {
   const [comment, setComment] = useState("");
   const [users, setUsers] = useState([]);
-  const [controller, setController] = useState(false);
   const [commentsofPost, setCommentsOfPost] = useState([]);
   // const [likes, setLikes] = useState()
 
@@ -83,15 +68,10 @@ export const Comments = (props) => {
 
   const createComment = async () => {
     await createCommentApi(config, body);
-    // setController(!controller);
   };
   useEffect(() => {
     atualizarapagina();
   }, []);
-
-  // useEffect(() => {
-  //   createComment();
-  // }, []);
 
   let name = "";
 

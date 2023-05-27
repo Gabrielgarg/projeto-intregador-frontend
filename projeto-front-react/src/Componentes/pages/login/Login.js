@@ -9,7 +9,7 @@ import {
   Modelspageoflogin,
 } from "./style";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import { LoginApi } from "../../api/Apis";
@@ -19,6 +19,8 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { validarEmail } from "../../../utils/regex";
 import { validarSenha } from "../../../utils/regex";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { FormofButton, Formofpassword, SizeofForm } from "../posts/style";
 
 export const Login = () => {
   const navigation = useNavigate();
@@ -29,6 +31,18 @@ export const Login = () => {
   const [carregando, setCarregando] = useState(false);
   const [emailErr, setEmailErr] = useState(false);
   const [passwordErr, setPassworErr] = useState(false);
+  const inputRef = useRef(null);
+  const [eyeIsClosed, setEyeState] = useState(true);
+
+  const toggleShow = () => {
+    if (inputRef.current.type === "password") {
+      setEyeState(false);
+      inputRef.current.type = "text";
+    } else {
+      setEyeState(true);
+      inputRef.current.type = "password";
+    }
+  };
 
   const body = {
     email,
@@ -126,14 +140,25 @@ export const Login = () => {
                 placeholder="name@example.com"
               />
             </FloatingLabel>
-            <FloatingLabel
-              value={password}
-              onChange={changePassword}
-              controlId="floatingPassword"
-              label="Senha"
-            >
-              <Form.Control type="password" placeholder="Password" />
-            </FloatingLabel>
+            <Formofpassword>
+              <SizeofForm>
+                <FloatingLabel
+                  value={password}
+                  onChange={changePassword}
+                  controlId="floatingPassword"
+                  label="Senha"
+                >
+                  <Form.Control
+                    ref={inputRef}
+                    type="password"
+                    placeholder="Password"
+                  />
+                </FloatingLabel>
+              </SizeofForm>
+              <FormofButton onClick={toggleShow}>
+                {eyeIsClosed ? <VscEyeClosed /> : <VscEye />}
+              </FormofButton>
+            </Formofpassword>
             {passwordErr && (
               <div>
                 Digite uma senha mais forte! Letra Maiuscula e minuscula,

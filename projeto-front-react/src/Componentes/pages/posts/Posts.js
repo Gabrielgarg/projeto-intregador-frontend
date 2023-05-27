@@ -1,5 +1,4 @@
 import {
-  BodyofpageCreate,
   ButtonlogarCreate,
   Divofalignitems,
   DivofalignitemsAbouve,
@@ -11,31 +10,14 @@ import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import { Buttonlogin, Linelogin } from "../login/style";
-import balao from "../../images/balao.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-  BodyofpagePost,
-  Buttonlogin3,
-  Buttonlogin4,
-  Buttonup,
-  Linelogin2,
-  Linelogin3,
-  Styleofcard,
-  TextofPost,
-} from "./style";
-import {
-  CreatePostApi,
-  GetPostApi,
-  getCommentsApi,
-  getPostApi,
-} from "../../api/Apis";
+import { BodyofpagePost, Buttonlogin4, Linelogin3, TextofPost } from "./style";
+import { CreatePostApi, getPostApi } from "../../api/Apis";
 import { PostCard } from "./PostCard";
 
 export const Posts = (props) => {
   const navigation = useNavigate();
-  // const [comments, setComments] = useState({});
   const [post, setPost] = useState("");
   const [controller, setController] = useState(false);
   const [posts, setPosts] = useState([]);
@@ -120,16 +102,26 @@ export const Posts = (props) => {
           <Linelogin3 />
         </DivofalignitemsAbouve>
         <Divofalignitems>
-          {posts.map((post) => {
-            return (
-              <PostCard
-                key={post.id}
-                post={post}
-                setPostorcomment={props.setPostorcomment}
-                postorcomment={props.postorcomment}
-              />
-            );
-          })}
+          {posts
+            .sort((atual, proximo) => {
+              if (atual.likes < proximo.likes) {
+                return 1;
+              } else if (atual.likes > proximo.likes) {
+                return -1;
+              } else {
+                return posts;
+              }
+            })
+            .map((post) => {
+              return (
+                <PostCard
+                  key={post.id}
+                  post={post}
+                  setPostorcomment={props.setPostorcomment}
+                  postorcomment={props.postorcomment}
+                />
+              );
+            })}
         </Divofalignitems>
       </BodyofpagePost>
     </Modelspageoflogin>

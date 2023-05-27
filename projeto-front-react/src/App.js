@@ -1,15 +1,11 @@
 import "./App.css";
-import { Paginas } from "./Componentes/Paginas";
-import { Globalstyle } from "./Globalstyle";
+import { Paginas } from "./Componentes/router/Paginas";
 
 function App() {
   return (
     <div>
       <Paginas />
     </div>
-    // <Globalstyle>
-    //   <div>salve</div>
-    // </Globalstyle>
   );
 }
 

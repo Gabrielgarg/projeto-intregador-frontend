@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Login } from "./pages/login/Login";
-import { ErrorPage } from "./pages/errorpage/ErrorPage";
-import { CreateUser } from "./pages/createUser/Createuser";
-import { Posts } from "./pages/posts/Posts";
-import { Comments } from "./pages/posts/Comments";
+import { Login } from "../pages/login/Login";
+import { ErrorPage } from "../pages/errorpage/ErrorPage";
+import { CreateUser } from "../pages/createUser/Createuser";
+import { Posts } from "../pages/posts/Posts";
+import { Comments } from "../pages/posts/Comments";
 import { useState } from "react";
 
 export const Paginas = () => {
